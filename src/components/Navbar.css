@@ -1,0 +1,111 @@
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #667eea;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-link {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #667eea;
+}
+
+.navbar-user {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.navbar-logout {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.navbar-logout:hover {
+  background: #5568d3;
+}
+
+/* 移動端優化 */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-links {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar-link {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .navbar-user {
+    display: none; /* 在移動端隱藏用戶名以節省空間 */
+  }
+
+  .navbar-logout {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    min-height: 44px; /* 確保觸摸目標足夠大 */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .navbar-links {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .navbar-link {
+    flex: 1;
+    text-align: center;
+  }
+}

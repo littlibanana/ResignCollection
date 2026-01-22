@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:3001/api/:splat"
+  status = 200
+  force = false
+
+# 注意：Netlify 需要单独部署后端，或者使用 Netlify Functions
+# 这个配置假设后端部署在其他地方

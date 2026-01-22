@@ -1,0 +1,393 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.home-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.stamp-section,
+.friends-stamp-section {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stamp-section h1,
+.friends-stamp-section h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.progress-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.progress-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.progress-percent {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.3);
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: white;
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 5px;
+}
+
+.add-stamp-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stamp-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.stamp-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.add-button {
+  padding: 0.75rem 1.5rem;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-button:hover {
+  background: #5568d3;
+}
+
+.stamps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.stamp-card {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.stamp-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stamp-card.completed {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.stamp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 0.5rem;
+}
+
+.stamp-header h3 {
+  color: #333;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.delete-button {
+  background: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.delete-button:hover {
+  background: #ff1744;
+}
+
+.stamp-desc {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.stamp-toggle {
+  width: 100%;
+  padding: 0.5rem;
+  background: white;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  color: #667eea;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.stamp-toggle:hover {
+  background: #f0f0ff;
+}
+
+.stamp-toggle.checked {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: white;
+}
+
+.stamp-status {
+  width: 100%;
+  padding: 0.5rem;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  color: #666;
+  font-weight: 500;
+  text-align: center;
+}
+
+.stamp-status.checked {
+  background: #e8f5e9;
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+.friend-stamp {
+  opacity: 0.9;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+}
+
+.friend-visibility {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.friend-visibility h3 {
+  color: #555;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.no-friends {
+  color: #999;
+  font-style: italic;
+}
+
+.friend-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.friend-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.friend-checkbox:hover {
+  background: #e9ecef;
+}
+
+.friend-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.friend-selector {
+  margin-bottom: 2rem;
+}
+
+.friend-selector label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.friend-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+
+.friend-select:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.friend-stamps h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 1rem;
+  }
+
+  .stamp-section,
+  .friends-stamp-section {
+    padding: 1.5rem;
+  }
+
+  .stamp-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .friends-stamp-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .progress-card {
+    padding: 1.25rem;
+  }
+
+  .progress-text {
+    font-size: 1rem;
+  }
+
+  .progress-percent {
+    font-size: 1.3rem;
+  }
+
+  .add-stamp-form {
+    flex-direction: column;
+  }
+
+  .stamp-input {
+    width: 100%;
+    font-size: 16px; /* 防止 iOS 自動縮放 */
+    padding: 1rem;
+    min-height: 44px;
+  }
+
+  .add-button {
+    width: 100%;
+    padding: 1rem;
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  .stamps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stamp-card {
+    padding: 1.25rem;
+  }
+
+  .stamp-toggle {
+    padding: 0.75rem;
+    min-height: 44px;
+    font-size: 1rem;
+  }
+
+  .delete-button {
+    width: 32px;
+    height: 32px;
+    font-size: 1.4rem;
+  }
+
+  .friend-checkbox {
+    padding: 0.75rem 1rem;
+    min-height: 44px;
+  }
+
+  .friend-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  .friend-select {
+    font-size: 16px; /* 防止 iOS 自動縮放 */
+    padding: 1rem;
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-container {
+    padding: 0.75rem;
+  }
+
+  .stamp-section,
+  .friends-stamp-section {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .progress-card {
+    padding: 1rem;
+  }
+
+  .stamp-card {
+    padding: 1rem;
+  }
+}
