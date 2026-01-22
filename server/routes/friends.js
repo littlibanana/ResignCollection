@@ -86,7 +86,7 @@ router.get('/:userId', async (req, res) => {
 })
 
 // 獲取待處理的好友請求
-router.get('/:userId/requests', (req, res) => {
+router.get('/:userId/requests', async (req, res) => {
   try {
     const { userId } = req.params
 

@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid'
 const router = express.Router()
 
 // 獲取用戶的集點卡
-router.get('/:userId', (req, res) => {
+router.get('/:userId', async (req, res) => {
   try {
     const { userId } = req.params
 
