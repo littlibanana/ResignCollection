@@ -1,0 +1,33 @@
+# Alpine 版本（更小的鏡像，但需要更多構建工具）
+FROM node:18-alpine
+
+# 安裝構建依賴（sqlite3 需要）
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    sqlite
+
+# 設置工作目錄
+WORKDIR /app
+
+# 複製 package 文件
+COPY package*.json ./
+
+# 安裝所有依賴
+RUN npm ci
+
+# 複製應用代碼
+COPY . .
+
+# 構建前端
+RUN npm run build
+
+# 暴露端口
+EXPOSE 3001
+
+# 設置環境變量
+ENV NODE_ENV=production
+
+# 啟動應用
+CMD ["node", "server/index.js"]

@@ -1,8 +1,15 @@
-# 使用 Node.js 官方映像
-FROM node:18-alpine
+# 使用 Node.js 官方映像（使用完整版本而非 alpine，避免構建問題）
+FROM node:18-slim
 
 # 設置工作目錄
 WORKDIR /app
+
+# 安裝必要的系統依賴（sqlite3 需要）
+RUN apt-get update && apt-get install -y \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
 
 # 複製 package 文件
 COPY package*.json ./
