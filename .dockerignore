@@ -9,3 +9,7 @@ README.md
 *.md
 .vscode
 .idea
+.DS_Store
+server/database.sqlite
+server/database.sqlite-journal
+backups

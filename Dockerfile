@@ -7,8 +7,8 @@ WORKDIR /app
 # 複製 package 文件
 COPY package*.json ./
 
-# 安裝依賴
-RUN npm ci --only=production
+# 安裝所有依賴（包括 devDependencies，因為構建需要 vite）
+RUN npm ci
 
 # 複製應用代碼
 COPY . .
@@ -18,6 +18,9 @@ RUN npm run build
 
 # 暴露端口
 EXPOSE 3001
+
+# 設置環境變量
+ENV NODE_ENV=production
 
 # 啟動應用
 CMD ["node", "server/index.js"]
